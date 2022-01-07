@@ -1,14 +1,19 @@
+
+from functools import partial
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import nltk
 from nltk.stem import WordNetLemmatizer
+import hyperlinkmanager
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
-
+import hyperlink
 from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
-intents = json.loads(open('intent.json').read())
+intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
@@ -49,23 +54,29 @@ def predict_class(sentence, model):
         return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
     return return_list
 
-def getResponse(ints,intents_json):
+def getResponse(ints, intents_json):
     tag = ints[0]['intent']
     list_of_intents = intents_json['intents']
     for i in list_of_intents:
-        if(i['intent']== tag):
+        if(i['tag']== tag):
             result = random.choice(i['responses'])
             break
     return result
 
 def chatbot_response(msg):
+    print(msg)
     ints = predict_class(msg, model)
     res = getResponse(ints, intents)
     return res
+
+
 #Creating GUI with tkinter
 import tkinter
 from tkinter import *
-
+import webbrowser
+def callback(url):
+    print (url)
+    webbrowser.open_new(url)
 
 def send():
     msg = EntryBox.get("1.0",'end-1c').strip()
@@ -75,16 +86,24 @@ def send():
         ChatLog.config(state=NORMAL)
         ChatLog.insert(END, "You: " + msg + '\n\n')
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
-    
-        res = chatbot_response(msg)
-        ChatLog.insert(END, "Bot: " + res + '\n\n')
+        ques = msg.split(",")
+        print(ques)
+        for x in ques:
+         res = chatbot_response(x)
+        if ("http" in res):
+            resstr = str(res)
+            hyperlink1 = hyperlinkmanager.HyperlinkManager(ChatLog)
+            ChatLog.insert(END, "Bot: " )
+            ChatLog.insert(END,"click here " + '\n\n',hyperlink1.add(partial(webbrowser.open,resstr)))
+        else:
+         ChatLog.insert(END, "Bot: " + res + '\n\n')
             
         ChatLog.config(state=DISABLED)
         ChatLog.yview(END)
  
 
 base = Tk()
-base.title("Hello")
+base.title("MIU CHATBOT")
 base.geometry("400x500")
 base.resizable(width=FALSE, height=FALSE)
 
@@ -99,9 +118,8 @@ ChatLog['yscrollcommand'] = scrollbar.set
 
 #Create Button to send message
 SendButton = Button(base, font=("Verdana",12,'bold'), text="Send", width="12", height=5,
-                    bd=0, bg="#32de97", activebackground="#3c9d9b",fg='#ffffff',
+                    bd=0, bg="#079CFF", activebackground="#0D87D8",fg='#FFFFFF',
                     command= send )
-
 #Create the box to enter message
 EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 #EntryBox.bind("<Return>", send)
@@ -110,10 +128,8 @@ EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 #Place all components on the screen
 scrollbar.place(x=376,y=6, height=386)
 ChatLog.place(x=6,y=6, height=386, width=370)
-EntryBox.place(x=128, y=401, height=90, width=265)
-SendButton.place(x=6, y=401, height=90)
+
+EntryBox.place(x=6, y=401, height=90, width=265)
+SendButton.place(x=271, y=401, height=90)
 
 base.mainloop()
-
-
-
