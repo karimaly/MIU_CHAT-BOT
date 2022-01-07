@@ -1,7 +1,7 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "responses": ["Hello, How can i help?", "Good to see you, How can i help?", "Hi there, how can I help?"],
          "context": [""]
         },
         
@@ -17,11 +17,11 @@
          "context": [""]
         },
         {"tag": "noanswer",
-         "patterns": [],
+         "patterns": ["hhh"],
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
          "context": [""]
         },
-        {"tag":"university" ,
+        {"tag":"student" ,
          "patterns": ["what is the university fees?" ],
          "responses": ["which college do you want?"],
          "context": [""]
@@ -52,8 +52,8 @@
         },
         
         {"tag":"calender" ,
-        "patterns": ["i want to know when spring 2022 start?"],
-        "responses": [ "https://www.miuegypt.edu.eg/wp-content/uploads/MIU-Academic-Calendar-2021-2022-V03.pdf"],
+        "patterns": [" when spring 2022 start?","when fall 2022 start?"],
+        "responses": ["https://www.miuegypt.edu.eg/wp-content/uploads/MIU-Academic-Calendar-2021-2022-V03.pdf"],
         "context": [""]
         },
         
