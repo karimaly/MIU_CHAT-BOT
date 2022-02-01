@@ -8,7 +8,6 @@ import hyperlinkmanager
 lemmatizer = WordNetLemmatizer()
 import pickle
 import numpy as np
-import hyperlink
 from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
@@ -89,14 +88,14 @@ def send():
         ques = msg.split(",")
         print(ques)
         for x in ques:
-         res = chatbot_response(x)
+            res = chatbot_response(x)
         if ("http" in res):
             resstr = str(res)
             hyperlink1 = hyperlinkmanager.HyperlinkManager(ChatLog)
             ChatLog.insert(END, "Bot: " )
             ChatLog.insert(END,"click here " + '\n\n',hyperlink1.add(partial(webbrowser.open,resstr)))
         else:
-         ChatLog.insert(END, "Bot: " + res + '\n\n')
+            ChatLog.insert(END, "Bot: " + res + '\n\n')
             
         ChatLog.config(state=DISABLED)
         ChatLog.yview(END)
