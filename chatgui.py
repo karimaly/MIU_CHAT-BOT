@@ -119,6 +119,9 @@ ChatLog['yscrollcommand'] = scrollbar.set
 SendButton = Button(base, font=("Verdana",12,'bold'), text="Send", width="12", height=5,
                     bd=0, bg="#079CFF", activebackground="#0D87D8",fg='#FFFFFF',
                     command= send )
+question1 = Button(base, font=("Verdana",7), text="How much fees for computer science?", width=5, height=2,
+                    bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
+                    command= send )
 #Create the box to enter message
 EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 #EntryBox.bind("<Return>", send)
@@ -126,7 +129,9 @@ EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 
 #Place all components on the screen
 scrollbar.place(x=376,y=6, height=386)
+question1.place(x = 6,y=376,height =25,width = 200)
 ChatLog.place(x=6,y=6, height=386, width=370)
+
 
 EntryBox.place(x=6, y=401, height=90, width=265)
 SendButton.place(x=271, y=401, height=90)
