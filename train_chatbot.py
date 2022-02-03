@@ -101,16 +101,21 @@ print("Training data created")
 # equal to number of intents to predict output intent with softmax
 model = Sequential()
 model.layers
+#2 to power and feature extractions
+#try and error
 model.add(Dense( 128, input_shape=(len(train_x[0]),), activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
+#3adad el output
 model.add(Dense(len(train_y[0]), activation='softmax'))
+#model summary
 model.summary()
-# Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
-#sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-#model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+# Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model, to get optimal parameter to get a2al error
+sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+print ("sgd",sgd)
+model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
+#model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 #fitting and saving the model 
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
