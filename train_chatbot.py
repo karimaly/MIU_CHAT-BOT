@@ -83,6 +83,7 @@ for doc in documents:
     # output is a '0' for each tag and '1' for current tag (for each pattern)
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
+    print("Output",output_row)
     
     training.append([bag, output_row])
 # shuffle our features and turn into np.array
