@@ -155,7 +155,7 @@ ChatLog['yscrollcommand'] = scrollbar.set
 SendButton = Button(base, font=("Verdana",12,'bold'), text="Send", width="12", height=5,
                     bd=0, bg="#079CFF", activebackground="#0D87D8",fg='#FFFFFF',
                     command= send )
-question1 = Button(base, font=("Verdana",7), text="apple", width=5, height=2,
+question1 = Button(base, font=("Verdana",7), text="computer science", width=5, height=2,
                     bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
                     command=lambda m="How much fees for computer science?": qs1(m))
 question2 = Button(base, font=("Verdana",7), text="How much fees for computer science?", width=5, height=2,
