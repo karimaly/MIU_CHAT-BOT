@@ -1,6 +1,6 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
+         "patterns": ["Hi there", "How are you", "Is anyone there?","Hola", "Hello", "Good day"],
          "responses": ["Hello, How can i help?", "Good to see you, How can i help?", "Hi there, how can I help?"],
          "context": [""]
         },
@@ -78,7 +78,7 @@
          "context": ["search_blood_pressure_by_patient_id"]
         },
         {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": [],
+         "patterns": ["4r"],
          "responses": ["Loading Blood pressure result for Patient"],
          "context": [""]
         },
@@ -88,7 +88,7 @@
          "context": ["search_pharmacy_by_name"]
         },
         {"tag": "search_pharmacy_by_name",
-         "patterns": [],
+         "patterns": ["pp"],
          "responses": ["Loading pharmacy details"],
          "context": [""]
         },
@@ -98,12 +98,12 @@
          "context": ["search_hospital_by_params"]
         },
         {"tag": "search_hospital_by_params",
-         "patterns": [],
+         "patterns": ["nn"],
          "responses": ["Please provide hospital type"],
          "context": ["search_hospital_by_type"]
         },
         {"tag": "search_hospital_by_type",
-         "patterns": [],
+         "patterns": ["mm"],
          "responses": ["Loading hospital details"],
          "context": [""]
         }
