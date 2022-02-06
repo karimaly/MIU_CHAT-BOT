@@ -108,7 +108,6 @@ print("Training data created")
 # Create model - 3 layers. First layer 128 neurons, second layer 64 neurons and 3rd output layer contains number of neurons
 # equal to number of intents to predict output intent with softmax
 model = Sequential()
-model.layers
 #2 to power 7 equal 128 and feature extractions
 # 2 to power 6 equas 64
 #try and error
@@ -119,6 +118,7 @@ model.add(Dropout(0.5))
 #3adad el output
 #train y = tags el 3andy zero's we one's 3ala hasb eloutput row
 model.add(Dense(len(train_y[0]), activation='softmax'))
+model.layers
 #model summary
 model.summary()
 # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model, to get optimal parameter to get a2al error
@@ -129,6 +129,6 @@ print("categorical_crossentropy",model.compile)
 #model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 #fitting and saving the model 
-hist = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
-model.save('chatbot_model.h5', hist)
+history = model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=1)
+model.save('chatbot_model.h5', history)
 print("model created")
