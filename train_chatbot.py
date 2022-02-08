@@ -118,14 +118,12 @@ model.add(Dropout(0.5))
 #3adad el output
 #train y = tags el 3andy zero's we one's 3ala hasb eloutput row
 model.add(Dense(len(train_y[0]), activation='softmax'))
-model.layers
 #model summary
 model.summary()
 # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model, to get optimal parameter to get a2al error
 sgd = SGD(learning_rate=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 print ("sgd",sgd)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-print("categorical_crossentropy",model.compile)
 #model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 #fitting and saving the model 
