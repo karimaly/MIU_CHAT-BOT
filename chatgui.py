@@ -78,23 +78,7 @@ import webbrowser
 def callback(url):
     print (url)
     webbrowser.open_new(url)
-def email():
-        msg1 = EntryBox.get("1.0",'end-1c').strip()
-     
-    # Create a text/plain message
-        msg = MIMEText(msg1)
-
-# me == the sender's email address
-# you == the recipient's email address
-        msg['Subject'] = 'The contents of %s'
-        msg['From'] = "ahmed1801899@gmail.com"
-        msg['To'] ="harrypotter1688@gmail.com"
-        msg.preamble = msg1
-        s = smtplib.SMTP('localhost')
-        s.sendmail("ahmed1801899@gmail.com", ["harrypotter1688@gmail.com"], msg.as_string())
-        s.quit()
 def qs1(msg):
-
     if msg != '':
         ChatLog.config(state=NORMAL)
         ChatLog.insert(END, "You: " + msg + '\n\n')
@@ -155,21 +139,21 @@ ChatLog['yscrollcommand'] = scrollbar.set
 SendButton = Button(base, font=("Verdana",12,'bold'), text="Send", width="12", height=5,
                     bd=0, bg="#079CFF", activebackground="#0D87D8",fg='#FFFFFF',
                     command= send )
-question1 = Button(base, font=("Verdana",7), text="computer science", width=5, height=2,
-                    bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
-                    command=lambda m="How much fees for computer science?": qs1(m))
-question2 = Button(base, font=("Verdana",7), text="How much fees for computer science?", width=5, height=2,
-                    bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
-                    command= qs1 )
-question3 = Button(base, font=("Verdana",7), text="Other", width=5, height=2,
-                    bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
-                    command= email)
-question4 = Button(base, font=("Verdana",7), text="How much fees for computer science?", width=5, height=2,
-                    bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
-                    command= qs1 )
-question5 = Button(base, font=("Verdana",7), text="Other", width=5, height=2,
-                    bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
-                    command= qs1 )
+#question1 = Button(base, font=("Verdana",7), text="computer science", width=5, height=2,
+# # bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
+# command=lambda m="How much fees for computer science?": qs1(m))
+#question2 = Button(base, font=("Verdana",7), text="How much fees for computer science?", width=5, height=2,
+# bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
+# command= qs1 )
+#question3 = Button(base, font=("Verdana",7), text="Other", width=5, height=2,
+#bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
+#command= email)
+##question4 = Button(base, font=("Verdana",7), text="How much fees for computer science?", width=5, height=2,
+#bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
+# command= qs1 )
+#question5 = Button(base, font=("Verdana",7), text="Other", width=5, height=2,
+# bd=0, bg="#5C6266", activebackground="#0D87D8",fg='#FFFFFF',borderwidth = 0,
+# #command= qs1 )
 
 
 #Create the box to enter message
@@ -179,9 +163,9 @@ EntryBox = Text(base, bd=0, bg="white",width="29", height="5", font="Arial")
 
 #Place all components on the screen
 scrollbar.place(x=376,y=6, height=386)
-question1.place(x = 6,y=350,height =25,width = 190)
-question2.place(x =207,y=376,height =25,width = 190)
-question3.place(x = 6,y=376,height =25,width = 190)
+#question1.place(x = 6,y=350,height =25,width = 190)
+##question2.place(x =207,y=376,height =25,width = 190)
+#question3.place(x = 6,y=376,height =25,width = 190)
 
 
 ChatLog.place(x=6,y=6, height=386, width=370)
