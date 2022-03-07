@@ -1,111 +1,164 @@
 {"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hola", "Hello", "Good day"],
-         "responses": ["Hello, How can i help?", "Good to see you, How can i help?", "Hi there, how can I help?"],
-         "context": [""]
-        },
-        
-        
-        {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
-         "context": [""]
-        },
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"],
-         "context": [""]
-        },
-        {"tag": "noanswer",
-         "patterns": ["hhh"],
-         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
-         "context": [""]
-        },
-        {"tag":"student" ,
-         "patterns": ["what is the university fees?" ],
-         "responses": ["which college do you want?"],
-         "context": [""]
-        },
-     
-        {"tag":"Computer science" ,
-        "patterns": ["computer science"],
-        "responses": ["60,000EGP"],
+       {"tag": "Greeting",
+       "patterns": ["Hi", "Hey", "Hello", "How are you", "Is anyone there?"],
+       "responses": ["Hello, How can i help?"],
+       "context": [""]
+       },
+       {"tag": "Goodbye",
+       "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Thank you for your help"],
+       "responses": ["Goodbye, See you later!"],
+       "context": [""]
+       },
+       {"tag": "about",
+        "patterns": ["how are you doing?", "how are you?"],
+        "responses": ["Thanks for asking! How can I help you?"],
         "context": [""]
-        },
-        
-        {"tag":"Bussiness Administration" ,
-        "patterns": ["Bussiness Administration"],
-        "responses": ["80,000EGP"],
+       },
+       {"tag": "Thanks",
+       "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
+       "responses": ["Happy to help!"],
+       "context": [""]
+       },
+       {"tag": "Apply",
+       "patterns": ["How can i apply?"],
+       "responses": ["Visit our official website and press Apply Now tab to start your online application process. Please fill in all the blank spaces and make sure to submit a valid email since all communications including the request for missing documents and final acceptance will be via this email."],
+       "context": [""]
+       },
+       {"tag": "PortalLink",
+       "patterns": ["Where can i find the student portal?", "What is the student portal link?"],
+       "responses": ["https://portal.miuegypt.edu.eg/"],
+       "context": [""]
+       },
+       {"tag": "E-Learning",
+       "patterns": ["Where can i find the E-Learning link?", "What is the moodle link?"],
+       "responses": ["https://moodle.miuegypt.edu.eg/"],
+       "context": [""]
+       },
+       {"tag": "Calendar",
+       "patterns": ["Where can i find the year calendar?"],
+       "responses": ["https://www.miuegypt.edu.eg/wp-content/uploads/MIU-Academic-Calendar-2021-2022-V04.pdf"],
+       "context": [""]
+       },
+       {"tag": "Admission",
+       "patterns": ["What are the admission requirements?", "How does the admissiong work?", "What is the admission process?"],
+       "responses": ["https://www.miuegypt.edu.eg/admission-requirements/"],
+       "context": [""]
+       },
+       {"tag": "TransferStudent",
+       "patterns": ["How can a transfer student apply?"],
+       "responses": ["https://www.miuegypt.edu.eg/admission-requirements/"],
+       "context": [""]
+       },
+       {"tag": "AcademicLoad",
+       "patterns": ["What is the academic load?"],
+       "responses": ["The academic load is the number of credit hours a student carries in one semester. A regular student carries the following number of credit hours: (Faculty of Pharmacy (12-22 Credit Hours)), (Faculty of Engineering (12-22 Credit Hours)), (Faculty of Business Administration & International Trade (12-18 Credit Hours)), (Faculty of Mass Communication (12-18 Credit Hours)), (Faculty of Al-Alsun (12-18 Credit Hours)), (Faculty of Computer Science (12-18 Credit Hours)), (Faculty of Dentistry (load is determined by academic year. The academic load in the summer term is 2 courses))."],
+       "context": [""]
+       },
+       {"tag": "AcademicAdvising",
+       "patterns": ["How does the online advising work?"],
+       "responses": ["Each student is responsible for choosing and registering in his/her courses during the on-line advising period; otherwise, the schedule will be done by the academic advisor and the student will not be allowed to make any adjustments on it. The students should maintain regular contact with their assigned advisors to ensure fulfillment of university and departmental requirements and to remain aware of any changes in programs and requirements."],
+       "context": [""]
+       },
+       {"tag": "Probation",
+       "patterns": ["What is probation?", "How does probation work?"],
+       "responses": ["Students who fail to maintain a GPA of 2.00 will be placed on academic probation and will be restricted to a load of 12 credit hours or 4 courses per semester. Students on probation who are enrolled in the faculties of Pharmacy or Engineering can register for a maximum of 14 credit hours. The probationary period provides students with an opportunity to correct the deficiency in their GPA. This period may last for no more than three regular semesters. If students fail to achieve the required grade average by the end of the probationary period, they will be expelled."],
+       "context": [""]
+       },
+       {"tag": "AvoidProb",
+       "patterns": ["What can i do if i am placed on probation?"],
+       "responses": ["Students must maintain a minimum CUM GPA of 2.00 at the end of the academic semester or will be placed on a probation student, i.e. take a light load (4 courses + English Fundamentals (non credit) OR 3 courses + ENG100 or Freshman (credit)."],
+       "context": [""]
+       },
+       {"tag": "AddDrop",
+       "patterns": ["How can i add a course to my schedule?", "How can i drop a course from my schedule?"],
+       "responses": ["A student may add/drop a course or two during the first week of classes, depending on the available vacancy in the added course. It is the students’ responsibility to check his/her new schedule after add/drop to make sure that the action is done."],
+       "context": [""]
+       },
+       {"tag": "Drop",
+       "patterns": ["Can i drop a course after the midterms?", "Can i drop a course if i have a bad grade?"],
+       "responses": ["A student can drop any course(s) till the 10th week of the semester (the exact date is set in the university calendar)."],
+       "context": [""]
+       },
+       {"tag": "ExamAbsence",
+       "patterns": ["What happens if i missed my exam?", "What happens if i was absent in my exams?"],
+       "responses": ["Being absent in the final exam will lead to receiving an “F” grade even if the student scored the highest marks during the semester."],
+       "context": [""]
+       },
+       {"tag": "ChangeMajor",
+       "patterns": ["How can i change major?", "What should i do if i want to change major?"],
+       "responses": ["A student may change his/her major from one department or one faculty to another after fulfilling the following requirements: 1) Fill in a petition at the (SSO) following the announced dates. 2) The student should meet with his/her academic advisor. 3) The student’s score on the secondary school certificate should not be less than the score required for the new major and he/she must have studied the required subjects for the new major during the secondary stage. 4) Approval of Change of Major also depends on the student’s CUM GPA. 5) Approval is subject to availability of places in the new major. 6) Student’s GPA and academic status may change according to the major s/he transfers to. 7) The student should pass the aptitude exam if requested."],
+       "context": [""]
+       },
+       {"tag": "GradingSystem",
+       "patterns": ["How does the grading system work?", "What is the cumulative GPA?", "What is the major GPA?", "What is the grade scale?", "What are the grade letters?"],
+       "responses": ["https://www.miuegypt.edu.eg/admission-requirements/ , You can check the Grading System tab in the Academic Regulations on the left through this link."],
+       "context": [""]
+       },
+       {"tag": "Scholarship",
+       "patterns": ["Does MIU provide a scholarship?"],
+       "responses": ["MIU provide two kinds of scholarships: Merit Scholarships (Egyptian students with high ranking scores in Thanaweya Amma or its equivalent will be awarded scholarships. The scholarships are awarded at the time of admissions for one year, after that they will be adjusted according to the student’s academic performance (cumulative GPA)) and Sports Achievement Awards (Students with superior ranking in sports will be granted scholarships for: 1) Participating in international or regional championships. 2) Ranking first place in an individual/team, played in a most recent championship. 3) Eligibility for these scholarships lasts one academic year. To benefit from this award the following year, a student should participate, in the name of the university in the National Universities tournament.)"],
+       "context": [""]
+       },
+       {"tag": "TuitionFees",
+       "patterns": ["What are the tuition fees?", "What are the fees?"],
+       "responses": ["https://www.miuegypt.edu.eg/admission-requirements/ , Tuition Fees changes every year, you can check the tuition fees tab on the left through this link."],
+       "context": [""]
+       },
+       {"tag": "FacultyOfAlsun",
+       "patterns": ["Where can i find information on the faculty of alsun?"],
+       "responses": ["https://www.miuegypt.edu.eg/academics/faculty-of-alsun/"],
+       "context": [""]
+       },
+       {"tag": "AlsunAdmission",
+       "patterns": ["How can i join the faculty of alsun?", "How can i enter the faculty of alsun?"],
+       "responses": [ "MIU admits applicants, seeking to apply for the Fall and Spring semesters, up to one year in advance of their anticipated date of first enrollment. All qualified applicants must sit for an English Placement Exam (EPE) upon which the level of English Language of each student is determined; however,passing this exam is not an indication of acceptance. Students must complete all the admission procedures which include a medical examination conducted by the university. Students can apply with copies of their certificates but will not be considered fully registered without the submission of their original documents. Transfer students must submit an official transcript from their former university alongside with the remaining required documents. MIU accepts various types of high school certificates that are all calculated according to the regulations set by the Supreme Council of  Egyptian Universities. MIU will not determine the final acceptance of candidates who have not submitted complete applications or documents."],
+       "context": [""]
+       },
+       {"tag": "AlsunAcademicProgram",
+       "patterns": ["What are the courses in the faculty of alsun?"],
+       "responses": ["https://www.miuegypt.edu.eg/academics/faculty-of-alsun/ , You can check the new curriculum in the academic program tab on the left through this link."],
+       "context": [""]
+       },
+       {"tag": "FacultyOfBuisness",
+       "patterns": ["Where can i find information on the faculty of buisness?"],
+       "responses": ["https://www.miuegypt.edu.eg/academics/faculty-of-business-2/"],
+       "context": [""]
+       },
+       {"tag": "BuisnessAdmission",
+       "patterns": ["How can i join the faculty of buisness?", "How can i enter the faculty of buisness?"],
+       "responses": ["MIU admits applicants, seeking to apply for the Fall and Spring semesters, up to one year in advance of their anticipated date of first enrollment. All qualified applicants must sit for an English Placement Exam (EPE) upon which the level of English Language of each student is determined; however,passing this exam is not an indication of acceptance. Students must complete all the admission procedures which include a medical examination conducted by the university. Students can apply with copies of their certificates but will not be considered fully registered without the submission of their original documents. Transfer students must submit an official transcript from their former university alongside with the remaining required documents. MIU accepts various types of high school certificates that are all calculated according to the regulations set by the Supreme Council of  Egyptian Universities. MIU will not determine the final acceptance of candidates who have not submitted complete applications or documents."],
+       "context": [""]
+       },
+       {"tag": "BuisnessAcademicProgram",
+       "patterns": ["What are the courses in the faculty of buisness?"],
+       "responses": ["https://www.miuegypt.edu.eg/academics/faculty-of-business-2/ , You can check the new curriculum in the academic program tab on the left through this link."],
+       "context": [""]
+       },
+
+       {"tag": "GradeDistribution",
+        "patterns": ["What is the grade distribution in the course?"],
+        "responses": ["10% Attendance & Participation. 40% Mid-Term Assessment. 50% Final Assessment."],
         "context": [""]
-        },
-        
-        {"tag":"Pharmacy" ,
-        "patterns": ["Pharmacy"],
-        "responses": ["100,000EGP"],
+       },
+
+       {"tag": "Services&Facilities",
+        "patterns": ["What services does the university provide?", "What are the university facilities?"],
+        "responses": ["Information Technology Department (ITD), English Language Program (ELP), Student Support Office (SSO), Research Guidance Center, Quality Assurance Office, Online Courses, Students’ Mail, Library, Dental Clinic, Open Access Labs, Internet Labs, Study Room, Video Room, Mass Media Studios, Food Venues, Football Playground, Music Room, Art Room, MIU Fitness Center, Bus Service"],
         "context": [""]
-        },
-        
-        {"tag":"Denstiry" ,
-        "patterns": ["Denstiry"],
-        "responses": ["110,000EGP"],
+       },
+
+
+
+       {"tag": "TEST",
+       "patterns": ["How can i apply?"],
+       "responses": ["You can apply at MIU through the website homepage."],
+       "context": [""]
+       },
+
+       {"tag": "noans",
+        "patterns": ["why", "how", "when", "I", "you"],
+        "responses": ["Can't Understand Your Question", "Please elaborate your question"],
         "context": [""]
-        },
-        
-        {"tag":"calender" ,
-        "patterns": [" when spring 2022 start?","when fall 2022 start?"],
-        "responses": ["https://www.miuegypt.edu.eg/wp-content/uploads/MIU-Academic-Calendar-2021-2022-V03.pdf"],
-        "context": [""]
-        },
-        
-        {"tag": "options",
-         "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
-         "context": [""]
-        },
-        {"tag": "adverse_drug",
-         "patterns": ["How to check Adverse drug reaction?", "Open adverse drugs module", "Give me a list of drugs causing adverse behavior", "List all drugs suitable for patient with adverse reaction", "Which drugs dont have adverse reaction?" ],
-         "responses": ["Navigating to Adverse drug reaction module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure",
-         "patterns": ["Open blood pressure module", "Task related to blood pressure", "Blood pressure data entry", "I want to log blood pressure results", "Blood pressure data management" ],
-         "responses": ["Navigating to Blood Pressure module"],
-         "context": [""]
-        },
-        {"tag": "blood_pressure_search",
-         "patterns": ["I want to search for blood pressure result history", "Blood pressure for patient", "Load patient blood pressure result", "Show blood pressure results for patient", "Find blood pressure results by ID" ],
-         "responses": ["Please provide Patient ID", "Patient ID?"],
-         "context": ["search_blood_pressure_by_patient_id"]
-        },
-        {"tag": "search_blood_pressure_by_patient_id",
-         "patterns": ["4r"],
-         "responses": ["Loading Blood pressure result for Patient"],
-         "context": [""]
-        },
-        {"tag": "pharmacy_search",
-         "patterns": ["Find me a pharmacy", "Find pharmacy", "List of pharmacies nearby", "Locate pharmacy", "Search pharmacy" ],
-         "responses": ["Please provide pharmacy name"],
-         "context": ["search_pharmacy_by_name"]
-        },
-        {"tag": "search_pharmacy_by_name",
-         "patterns": ["pp"],
-         "responses": ["Loading pharmacy details"],
-         "context": [""]
-        },
-        {"tag": "hospital_search",
-         "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
-         "responses": ["Please provide hospital name or location"],
-         "context": ["search_hospital_by_params"]
-        },
-        {"tag": "search_hospital_by_params",
-         "patterns": ["nn"],
-         "responses": ["Please provide hospital type"],
-         "context": ["search_hospital_by_type"]
-        },
-        {"tag": "search_hospital_by_type",
-         "patterns": ["mm"],
-         "responses": ["Loading hospital details"],
-         "context": [""]
-        }
-   ]
+       }]
 }
+
